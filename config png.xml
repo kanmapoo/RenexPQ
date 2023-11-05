@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8'?>
+<config>
+  <rep>C:/Users/didie/OneDrive/python/Mon miroir/visages/Didier</rep>
+  <filtres select="1">
+    <filtre>.*\.(mkv|avi|mp4)$</filtre>
+    <filtre>.*</filtre>
+    <filtre>.*\..+$</filtre>
+  </filtres>
+  <scripts>
+    <regex>
+      <remplace>opencv_frame</remplace>
+      <par>Didier</par>
+    </regex>
+  </scripts>
+</config>

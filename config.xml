@@ -1,0 +1,247 @@
+<?xml version='1.0' encoding='utf-8'?>
+<config>
+  <rep>C:/Users/didie/Downloads</rep>
+  <filtres select="0">
+    <filtre>.*\.(mkv|avi|mp4)$</filtre>
+    <filtre>.*</filtre>
+    <filtre>.*\..+$</filtre>
+  </filtres>
+  <scripts>
+    <regex>
+      <remplace>/Users/didier/Downloads/Never.*/(.*)\.(avi|mkv|mp4)$</remplace>
+      <par>//syno/Plex/series/Never have I ever/\1.\2</par>
+    </regex>
+    <regex>
+      <remplace>/Users/didier/Downloads/Murdoch.*/(.*)\.(avi|mkv|mp4)$</remplace>
+      <par>//syno/Plex/series/Murdoch mysteries/\1.\2</par>
+    </regex>
+    <regex>
+      <remplace>/Users/didier/Downloads/Miss\sFisher.*/(.*)\.(avi|mkv|mp4)$</remplace>
+      <par>//syno/Plex/series/Miss Fishers Murder Mysteries/\1.\2</par>
+    </regex>
+    <regex>
+      <remplace>.*\\(.*)\.(.+)$</remplace>
+      <par>\\\\syno\\Plex\\temp\\\1.\2</par>
+    </regex>
+    <regex>
+      <remplace>/Users/didier/Downloads/.*/(.*)\.(avi|mkv|mp4)$</remplace>
+      <par>/Volumes/Plex/temp/\1.\2</par>
+    </regex>
+    <regex>
+      <remplace>/Users/didier/Downloads/.*/(.*)\.(avi|mkv|mp4)$</remplace>
+      <par>/Volumes/Plex/vdo/\1.\2</par>
+    </regex>
+    <regex>
+      <remplace>/Users/didier/Downloads/.*/(.*)\.(avi|mkv|mp4)$</remplace>
+      <par>/Users/didier/Downloads/\1.\2</par>
+    </regex>
+    <regex>
+      <remplace>/Users/didier/Downloads/(.*)\.(avi|mkv|mp4)$</remplace>
+      <par>/Volumes/Plex/temp/\1.\2</par>
+    </regex>
+    <regex>
+      <remplace>/Users/didier/Downloads/(.*)\.(avi|mkv|mp4)$</remplace>
+      <par>/Volumes/Plex/temp/\1.\2</par>
+    </regex>
+    <regex>
+      <remplace> rsvp|whtv|1400mb|DDLValley\.me|\.dsnp|\.vostfr|\[eztv\.re\]|\.miklange|\.vost|\.vip|\.hdts|\.tirexo\.lol|\.imax|\.x\.264|\.HEVC|\.syncopy\.78048|\.tirexo\.pro|\.LD|\.hulu|\.byNosferatu|\.pcok|\.mp2|\.HDLight|AC3\.5\.1|\.ZT\-ZA\.com|www2\.zone-warez\.com|\.HDTV|\.10bit|\.HQ|\.hdrip|aac2\.0|DDP5\.1|.H\.264|\.hd|\.x265|\b(FR)\b|\bEN\b|\bBluRay\b|-www\.Max-Rls\.CoM|\.HC|internal|ddp2.0|fansub|.light|\.2\.0|-www2\.tirexo\.org</remplace>
+      <par>[null]</par>
+    </regex>
+    <regex>
+      <remplace>-GalaxyRG|-damane|-?Wawacity\.[a-z]*|-ethel|-RMTeam|DDLValley\.\b.*\b|DDLValley\.me_afi|DDLValley.me_|dlvalley\.me|-psa</remplace>
+      <par>[null]</par>
+    </regex>
+    <regex>
+      <remplace>-lama|_83_|-edith|-scope|-nhtfs|-eleanor|-flux|-musicana|-TsundereRaws|-sunny|-tepes|-peculate|-plzproper|-CRIMSON|-ulysse|will1869|-TG|-ION265|-tgx|-jff|-nlx5|-freamon|-gossip|-TVD|-Wawacity.one|-ggez|-minx|_afi|-Wawacity\.TV|-afi|-STRONTiUM|-surcode|-naisu|-glhf|-utt|-bennett| sbz|-fgt|-slay3r|-mp4|-syncopy|-mobile|-ggwp|-showfr|-freeman|-cakes|-BAE|-unveil|-ntb|-tommy|-casstudio|-btw|-weeds|-pussyfoot|- www\.tirexo\.pro|-justwatch|-cmrg|-breeve|-fuc0v1d|-guacamole|-nikoo|www2|tirexo.com|Extreme-Down|Video|-Wawacity.co|-Wawacity.ec|-wawacity|.ninja|(\.|-)Dread-Team|-yol0w|-oath|-LTaTM|-walmart|-btx|\[SubWaWa\]_|-2.0-BLANK-Dread-Team|-archaic|-fries|EXTREME_wWw.Extreme-Down.Ninja|-scr|amzn|-fraternity|subfrench|ahdtv|-failed|-robots|zone.telechargement13.lol|-ion10_2|-ion10|-sdi|-w4f|-galaxytv|.stan|_wWw.Extreme-Down.Ninja|- www.zone-telechargement1.vip|-kisor|.repack|.720p?|zone-telechargement.group|zone-telechargement4.vip|-ac3|-ark01|-ntg|-afg|-ion10_2|-xlf|-msd|-MaxRls|Annuaire-Telechargement.CoM|Ww8.Zone-Telechargement1.ORGZone-Telechargement1.com|zone-telechargement2.vip|.WwW.Zone-Annuaire.COM|-river|-gismo65|-arcadia|-rdh|-ghosts|-CAFFEiNE|-rbb|- www.zone-telechargement.network|.ww4.filmtelecharger.net|DD5.1.H264-CMRG|-webrip-x264-rarbg|WEB-DL|H264|-DL.DDP5.1.H.264-NTG|-DL.x264-SKRiN|AMZN.WEB-DL.DDP2.0.H.264-NTG|.WwW.Zone-Telechargement1.com</remplace>
+      <par>[null]</par>
+    </regex>
+    <regex>
+      <remplace>2ch|Radio\.Harry|\.proper|\.vostfr|\.nf|\.dd5\.1|\[Waploaded_8\]</remplace>
+      <par>[null]</par>
+    </regex>
+    <regex>
+      <remplace>\.|_</remplace>
+      <par> </par>
+    </regex>
+    <regex>
+      <remplace> seriesTemp</remplace>
+      <par>_seriesTemp</par>
+    </regex>
+    <regex>
+      <remplace> \.(avi|mkv|mp4)$</remplace>
+      <par>.\1</par>
+    </regex>
+    <regex>
+      <remplace>\s(avi|mkv|mp4)$</remplace>
+      <par>.\1</par>
+    </regex>
+    <regex>
+      <remplace>HMAX|CAM|hdts|HEVC.x265|HDTV| x264| AC3| webrip| web| BRRip| avc|\s*aac|\bmd\b|5_1| dts</remplace>
+      <par>[null]</par>
+    </regex>
+    <regex>
+      <remplace>fastsub|VOSTFR|subforced|amrap-t|MULTi| TRUEFRENCH| 1080i| 1080p| HDLight| BDRip| XviD| 1080| FRENCH|HDRip| 720p|HDRMD-| DVDRip| mHDgz|\bVF\w*\b|\bGHT\b| REMASTERED| 480p</remplace>
+      <par>[null]</par>
+    </regex>
+    <regex>
+      <remplace>-Arcedo&amp;NekoYu|-NekoYu&amp;Arcedo|-kogi|-stream.re|-senpai|-antagonist|-wutang|-mtb|-stvfrv|-MeGusta|zone-telechargement.red|-amrap|-fun|-metcon|-sva|-cookiemonster|-aAF|-KILLERS|-WwW|-AT|-TOXIC|-PREUMS|-tbs|-lucidtv|-FuN(ky)*|-EVO|-PopHD|-DTS|-ZT|-mHDgz|-ENG|-GHZ|-CiNEFiLE|-PHOENiX|-rough|-pure|-skgtv|-skrin|-extreme</remplace>
+      <par>[null]</par>
+    </regex>
+    <regex>
+      <remplace>BzH29|.wwv.filmtelecharger.net| Zobe-Telechargement NET| WwW Zone-Telechargement NET|\s*Zone-Telechargement NET| Annuaire-Telechargement CoM|\s*DDLValley me_*|zone-telechargement ws|www.|Zone-Telechargement.top|zone-telechargement.world|zone-telechargement.pw|-zone-telechargement2.top</remplace>
+      <par>[null]</par>
+    </regex>
+    <regex>
+      <remplace> (\d{4})</remplace>
+      <par> (\1)</par>
+    </regex>
+    <regex>
+      <remplace>-\s*</remplace>
+      <par>[null]</par>
+    </regex>
+    <regex>
+      <remplace>\s+</remplace>
+      <par> </par>
+    </regex>
+    <regex>
+      <remplace>-\s*\.|\s+\.</remplace>
+      <par>.</par>
+    </regex>
+    <regex>
+      <remplace>blbld|blbl</remplace>
+      <par>Blue bloods</par>
+    </regex>
+    <regex>
+      <remplace>leis me</remplace>
+      <par>legacies</par>
+    </regex>
+    <regex>
+      <remplace>ze mndo|ThMand|t mand</remplace>
+      <par>the Mandalorian</par>
+    </regex>
+    <regex>
+      <remplace>spgl</remplace>
+      <par>Supergirl</par>
+    </regex>
+    <regex>
+      <remplace>Legacies me</remplace>
+      <par>Legacies</par>
+    </regex>
+    <regex>
+      <remplace>(.*)\srar$</remplace>
+      <par>\1.cbz</par>
+    </regex>
+    <regex>
+      <remplace>-*SH0W|- www.zone-telechargement.network</remplace>
+      <par>[null]</par>
+    </regex>
+    <regex>
+      <remplace>saison (\d+)</remplace>
+      <par>s\1</par>
+    </regex>
+    <regex>
+      <remplace> épisode (\d+)</remplace>
+      <par>e\1</par>
+    </regex>
+    <regex>
+      <remplace>st s</remplace>
+      <par>Stumptown s</par>
+    </regex>
+    <regex>
+      <remplace>c 404</remplace>
+      <par>Code 404</par>
+    </regex>
+    <regex>
+      <remplace>W~e~s~t s|w e s t s|w w s</remplace>
+      <par>Westworld s</par>
+    </regex>
+    <regex>
+      <remplace>I \(2020\)</remplace>
+      <par>Interpreters (2020)</par>
+    </regex>
+    <regex>
+      <remplace> mkv\.mp4$</remplace>
+      <par>.mp4</par>
+    </regex>
+    <regex>
+      <remplace>s(\d)e(\d)</remplace>
+      <par>s0\1e0\2</par>
+    </regex>
+    <regex>
+      <remplace> (\d+)x(\d+)</remplace>
+      <par> S\1E\2</par>
+    </regex>
+    <regex>
+      <remplace>tcana</remplace>
+      <par>the Croods a new age</par>
+    </regex>
+    <regex>
+      <remplace>Mnstr Hntrs</remplace>
+      <par>Monter Hunters</par>
+    </regex>
+    <regex>
+      <remplace>Th ROke</remplace>
+      <par>The Rookie</par>
+    </regex>
+    <regex>
+      <remplace>th unicorn</remplace>
+      <par>the unicorn</par>
+    </regex>
+    <regex>
+      <remplace>th rokie</remplace>
+      <par>the Rookie</par>
+    </regex>
+    <regex>
+      <remplace>rsdent</remplace>
+      <par>Resident</par>
+    </regex>
+    <regex>
+      <remplace>th Uncorn</remplace>
+      <par>The unicorn</par>
+    </regex>
+    <regex>
+      <remplace>SnStioN</remplace>
+      <par>Sensation</par>
+    </regex>
+    <regex>
+      <remplace>sprman</remplace>
+      <par>Superman and</par>
+    </regex>
+    <regex>
+      <remplace>dbris</remplace>
+      <par>debris</par>
+    </regex>
+    <regex>
+      <remplace>DbRs</remplace>
+      <par>Debris</par>
+    </regex>
+    <regex>
+      <remplace>Invncble</remplace>
+      <par>Invincible</par>
+    </regex>
+    <regex>
+      <remplace>Th Flcon the</remplace>
+      <par>The falcon and the</par>
+    </regex>
+    <regex>
+      <remplace>bl bl|Blu blOds|ble bloods</remplace>
+      <par>Blue bloods</par>
+    </regex>
+    <regex>
+      <remplace> work</remplace>
+      <par>[null]</par>
+    </regex>
+    <regex>
+      <remplace>drk</remplace>
+      <par>Dark</par>
+    </regex>
+    <regex>
+      <remplace>US s1 browser (\d) mp4360p</remplace>
+      <par>Primal S01E0\1</par>
+    </regex>
+    <regex>
+      <remplace>Detective McLean</remplace>
+      <par>Ties that bind (2015)</par>
+    </regex>
+  </scripts>
+</config>
