@@ -12,7 +12,7 @@ from QTableWidgetDragRows import TableWidgetDragRows
 class MyApp(QWidget):
     def __init__(self):
         super().__init__()
-        self.window_width, self.window_height = 1000, 500
+        self.window_width, self.window_height = 1000, 500 #dimensions
         self.resize(self.window_width, self.window_height)
         self.setWindowTitle('RenEx - renommage rapide de fichiers')
         hbox1 = QHBoxLayout()
