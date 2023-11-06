@@ -91,7 +91,7 @@ class MyApp(QWidget):
         self.regex.cellChanged.connect(self._regex_changed)
 
     def lire_config_xml(self):
-        tree = ET.parse('config.xml')
+        tree = ET.parse('./param/config.xml')
         scripts = tree.find("scripts")
         filtres = tree.find("filtres")
         i = int(tree.find('filtres').attrib["select"])
@@ -203,7 +203,7 @@ class MyApp(QWidget):
                 ET.SubElement(regex, "par").text = self.regex.item(t, 1).text()
         tree = ET.ElementTree(config)
         ET.indent(tree)
-        tree.write("config.xml", encoding="utf-8", xml_declaration=True)
+        tree.write("./param/config.xml", encoding="utf-8", xml_declaration=True)
 
 
 if __name__ == '__main__':
