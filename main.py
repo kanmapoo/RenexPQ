@@ -7,7 +7,7 @@ import os
 import xml.etree.ElementTree as ET
 import glob as GL
 import re as RE
-from QTableWidgetDragRows import TableWidgetDragRows
+#from QTableWidgetDragRows import TableWidgetDragRows
 from QTableWidgetDropRow import TableWidgetDropRow
 
 class MyApp(QWidget):

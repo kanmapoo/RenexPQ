@@ -232,16 +232,16 @@
       <par>[null]</par>
     </regex>
     <regex>
+      <remplace>Detective McLean</remplace>
+      <par>Ties that bind (2015)</par>
+    </regex>
+    <regex>
       <remplace>drk</remplace>
       <par>Dark</par>
     </regex>
     <regex>
       <remplace>US s1 browser (\d) mp4360p</remplace>
       <par>Primal S01E0\1</par>
-    </regex>
-    <regex>
-      <remplace>Detective McLean</remplace>
-      <par>Ties that bind (2015)</par>
     </regex>
   </scripts>
 </config>
