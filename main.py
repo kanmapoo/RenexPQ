@@ -8,6 +8,7 @@ import xml.etree.ElementTree as ET
 import glob as GL
 import re as RE
 from QTableWidgetDragRows import TableWidgetDragRows
+from QTableWidgetDropRow import TableWidgetDropRow
 
 class MyApp(QWidget):
     def __init__(self):
@@ -43,7 +44,7 @@ class MyApp(QWidget):
         self.nettoyer.setIcon(QIcon('pngegg.png'))
         self.nettoyer.setIconSize(QSize(60, 60))
         self.nettoyer.setText("Nettoyer (supprimer les répertoires vides)")
-        self.regex = TableWidgetDragRows()
+        self.regex = TableWidgetDropRow()
         self.regex.setShowGrid(True)
 
         hbox1.addWidget(self.lblO)
