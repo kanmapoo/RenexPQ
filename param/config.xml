@@ -243,5 +243,9 @@
       <remplace>US s1 browser (\d) mp4360p</remplace>
       <par>Primal S01E0\1</par>
     </regex>
+    <regex>
+      <remplace> LWMN</remplace>
+      <par>Lawmen</par>
+    </regex>
   </scripts>
 </config>

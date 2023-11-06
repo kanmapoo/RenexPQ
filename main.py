@@ -105,12 +105,14 @@ class MyApp(QWidget):
             self.regex.setItem(ligne, 1, QTableWidgetItem(rpl.find("par").text))
 
     def _deplacer(self, *args):
+        QApplication.setOverrideCursor(Qt.WaitCursor)
         for t in range(self.fichiers.rowCount()):
             fo = self.fichiers.item(t, 0).text()
             fd = self.fichiers.item(t, 1).text()
             if fd != "" and fo != fd:
                 SH.move(fo, fd)
         self._liste_fichiers()
+        QApplication.restoreOverrideCursor()
 
     def _filtres_changed(self, new_text):
         if new_text == "":
