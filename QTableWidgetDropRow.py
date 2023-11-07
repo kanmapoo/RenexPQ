@@ -1,8 +1,7 @@
 import typing
 from PyQt6 import QtCore
-from PyQt6.QtWidgets import QTableWidget, QAbstractItemView, QTableWidgetItem, QWidget
+from PyQt6.QtWidgets import QTableWidget, QAbstractItemView, QTableWidgetItem
 from PyQt6.QtGui import QDropEvent
-from PyQt6.QtCore import QChildEvent, QEvent
 
 class TableWidgetDropRow(QTableWidget):
     def __init__(self, *args, **kwargs):

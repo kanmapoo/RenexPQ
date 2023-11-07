@@ -1,5 +1,5 @@
 import sys
-from PyQt6.QtWidgets import QApplication, QWidget, QTableWidget, QTableWidgetItem, QVBoxLayout, QHBoxLayout, QLineEdit, QComboBox, QPushButton, QFileDialog, QMessageBox, QLabel, QStyleFactory, QTableWidgetItem,QAbstractItemDelegate
+from PyQt6.QtWidgets import QApplication, QWidget, QTableWidget, QTableWidgetItem, QVBoxLayout, QHBoxLayout, QLineEdit, QComboBox, QPushButton, QFileDialog, QMessageBox, QLabel, QStyleFactory, QTableWidgetItem,QProgressBar
 from PyQt6.QtGui import QIcon, QColor
 from PyQt6.QtCore import QSize, Qt
 import shutil as SH
@@ -36,6 +36,14 @@ class MyApp(QWidget):
         self.filtres.setDuplicatesEnabled(False)
         self.fichiers = QTableWidget()
         self.fichiers.setShowGrid(True)
+        self.fichiers.setColumnCount(2)
+        self.fichiers.setHorizontalHeaderLabels(["Avant", "Après"])
+        self.fichiers.horizontalHeaderItem(0).setBackground(QColor("blue"))
+        self.fichiers.horizontalHeaderItem(1).setBackground(QColor(43, 184, 240))
+        self.fichiers.setColumnWidth(0, 500)
+        self.fichiers.setColumnWidth(1, 500)
+        self.fichiers.verticalHeader().setVisible(False)
+        self.filtres.setEditable(True)
         self.deplacer = QPushButton()
         self.deplacer.setIcon(QIcon('file-transfer.png'))
         self.deplacer.setIconSize(QSize(60, 60))
@@ -46,39 +54,29 @@ class MyApp(QWidget):
         self.nettoyer.setText("Nettoyer (supprimer les répertoires vides)")
         self.regex = TableWidgetDropRow()
         self.regex.setShowGrid(True)
-
-        hbox1.addWidget(self.lblO)
-        hbox1.addWidget(self.repO)
-        hbox1.addWidget(self.finderO)
-        layout.addLayout(hbox1)
-
-        hbox3.addWidget(self.lblF)
-        hbox3.addWidget(self.filtres)
-        layout.addLayout(hbox3)
-
-        self.filtres.setEditable(True)
-        layout.addWidget(self.fichiers)
-        self.fichiers.setColumnCount(2)
-        self.fichiers.setHorizontalHeaderLabels(["Avant", "Après"])
-        self.fichiers.horizontalHeaderItem(0).setBackground(QColor("blue"))
-        self.fichiers.horizontalHeaderItem(1).setBackground(QColor(43, 184, 240))
-        
-        self.fichiers.setColumnWidth(0, 500)
-        self.fichiers.setColumnWidth(1, 500)
-        self.fichiers.verticalHeader().setVisible(False)
-
-        hbox2.addWidget(self.deplacer)
-        hbox2.addWidget(self.nettoyer)
-        layout.addLayout(hbox2)
-        layout.addWidget(self.regex)
         self.regex.setColumnCount(2)
         self.regex.setHorizontalHeaderLabels(["Remplace...", "...Par"])
         self.regex.horizontalHeaderItem(0).setBackground(QColor("green"))
         self.regex.horizontalHeaderItem(1).setBackground(QColor(50, 237, 56))
-        
         self.regex.setColumnWidth(0, 700)
         self.regex.setColumnWidth(1, 300)
         self.regex.verticalHeader().setVisible(False)
+        self.progress = QProgressBar()
+        self.progress.setAlignment(Qt.AlignmentFlag.AlignCenter)
+
+        hbox1.addWidget(self.lblO)
+        hbox1.addWidget(self.repO)
+        hbox1.addWidget(self.finderO)
+        hbox2.addWidget(self.deplacer)
+        hbox2.addWidget(self.nettoyer)
+        hbox3.addWidget(self.lblF)
+        hbox3.addWidget(self.filtres)
+        layout.addLayout(hbox1)
+        layout.addLayout(hbox3)
+        layout.addWidget(self.fichiers)
+        layout.addLayout(hbox2)
+        layout.addWidget(self.regex)
+        layout.addWidget(self.progress)
 
         self.lire_config_xml()
         self._liste_fichiers()
@@ -105,12 +103,15 @@ class MyApp(QWidget):
             self.regex.setItem(ligne, 1, QTableWidgetItem(rpl.find("par").text))
 
     def _deplacer(self, *args):
-        QApplication.setOverrideCursor(Qt.WaitCursor)
-        for t in range(self.fichiers.rowCount()):
+        QApplication.setOverrideCursor(Qt.CursorShape.WaitCursor)
+        tot = self.fichiers.rowCount()
+        for t in range(tot):
             fo = self.fichiers.item(t, 0).text()
             fd = self.fichiers.item(t, 1).text()
             if fd != "" and fo != fd:
                 SH.move(fo, fd)
+                self.progress.setValue(int((t+1) * 100 / tot ))
+                self.progress.setFormat("%s / %s" % (str(t+1), str(tot)))
         self._liste_fichiers()
         QApplication.restoreOverrideCursor()
 
@@ -143,6 +144,10 @@ class MyApp(QWidget):
             if ligne == max_fichiers:
                 break
             self.fichiers.setItem(ligne, 0, QTableWidgetItem(fic))
+
+        self.progress.setValue(0)
+        self.progress.setFormat("0 / %s" % (str(max_fichiers)))
+
         self.renommer()
 
     def _fichiers_changed(self, lig, col):
@@ -173,11 +178,12 @@ class MyApp(QWidget):
             #print("u = %d (%s => %s)" % (u, self.regex.item(u, 0).text(), self.regex.item(u, 1).text()))
             to = self.regex.item(u, 0).text()
             td = self.regex.item(u, 1).text()
+            #print ("%s => %s" %(to, td))
             if to != "":
                 if td == "[null]":
                     td = ''
-                r = RE.compile(to, RE.I)
-            retour = r.sub(td, retour)
+                #r = RE.compile(to, RE.I)
+                retour = RE.compile(to, RE.I).sub(td, retour)
         return retour
 
     def _supprimer_repertoires_vides(self, *args):
